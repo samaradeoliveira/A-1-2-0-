@@ -6,20 +6,19 @@ import pickle
 import numpy as np
 import random
 
-ignore_words = ['?', '!',',','.', "'s", "'m"]
+#declaração de lista 
 
-# Biblioteca load_model
-import tensorflow
-from data_preprocessing import get_stem_words
+# importações
 
-model = tensorflow.keras.models.load_model('./chatbot_model.h5')
+#carregamento de modelo
+
 
 # Carregue os arquivos de dados
 intents = json.loads(open('./intents.json').read())
 words = pickle.load(open('./words.pkl','rb'))
 classes = pickle.load(open('./classes.pkl','rb'))
 
-
+#explicar
 def preprocess_user_input(user_input):
 
     input_word_token_1 = nltk.word_tokenize(user_input)
@@ -39,6 +38,7 @@ def preprocess_user_input(user_input):
   
     return np.array(bag)
 
+#explicar
 def bot_class_prediction(user_input):
 
     inp = preprocess_user_input(user_input)
@@ -47,4 +47,17 @@ def bot_class_prediction(user_input):
     return predicted_class_label
 
 
-#criar Função 
+#criar Função bot_response
+
+
+
+
+
+
+#print
+
+
+
+
+
+#while
